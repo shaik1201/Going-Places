@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json()); // Parse JSON data
 app.use(cors());
+app.use('/uploads', express.static('uploads'));
+
 
 
 mongoose.connect('mongodb://localhost:27017/travelAppDB', {
@@ -26,8 +28,11 @@ const userSchema = new mongoose.Schema({
 });
 
 const postSchema = new mongoose.Schema({
-    content: String
+    title: String,
+    content: String,
+    image: String // Add this line to store the image file path
 });
+
 
 const User = mongoose.model('User', userSchema);
 
@@ -93,12 +98,19 @@ app.post('/api/login', async (req, res) => {
 
 
 
-app.post('/api/posts', async (req, res) => {
+const multer = require("multer");
+
+const upload = multer({ dest: "uploads/" }); // Set the destination folder for uploads
+
+app.post('/api/posts', upload.single("image"), async (req, res) => {
     try {
-        const { content } = req.body;
+        const { title, content } = req.body;
+        const imagePath = req.file ? req.file.path : null; // Get the path of the uploaded image
 
         const newPost = new Post({
-            content
+            title,
+            content,
+            image: imagePath // Associate the image path with the post
         });
 
         await newPost.save();
@@ -108,6 +120,7 @@ app.post('/api/posts', async (req, res) => {
         res.status(500).json({ error: 'An error occurred' });
     }
 });
+
 
 app.get('/api/getPosts', async (req, res) => {
     try {
