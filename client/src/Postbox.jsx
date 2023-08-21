@@ -48,7 +48,7 @@ const PostBox = ({ post }) => {
       <h2>
         {post.title}
         {weather && weather.main ? (
-          <span>, <br/> Current Temprature: {(weather.main.temp - 273.15).toFixed()}°C {getTemperatureEmoji(weather.main.temp)}</span>
+          <span>, <br/> Current Temperature: {(weather.main.temp - 273.15).toFixed()}°C {getTemperatureEmoji(weather.main.temp)}</span>
         ) : (
           <span>, Weather data not available</span>
         )}
@@ -56,7 +56,7 @@ const PostBox = ({ post }) => {
 
 
       <div className="post-content">
-        <p>{post.content}</p>
+        <p className='post-content'>{post.content}</p>
       </div>
 
       <div className="post-weather">

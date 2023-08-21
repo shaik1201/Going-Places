@@ -14,7 +14,6 @@ function Home() {
             <div className="head">
                 <div className='inImageText'>
                     <p className='go'>Going Places <p className='places'>I haven’t been everywhere, but it’s on my list</p></p>
-                    {/* <h8>I haven’t been everywhere, but it’s on my list</h8> */}
                 </div>
             </div>
             <div className="welcome">
@@ -40,8 +39,6 @@ function Home() {
                 <img className='image' src={img3} />
             </div>
 
-
-            {/* <div className="about">about and contact</div> */}
 
         </div>
     )
