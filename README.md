@@ -14,7 +14,7 @@ Welcome to the Going Places travel app! This web application allows users to sha
 
 Here are some screenshots of the app's user interface:
 
-![Home Page](/screenshots/home-page.png)
+![Home Page](/assets/home1.png)
 _Home Page_
 
 ![Login Page](/screenshots/login-page.png)
@@ -26,6 +26,13 @@ _Register Page_
 ![Main Page](/screenshots/main-page.png)
 _Main Page_
 
-## Getting Started
+## Contribution
 
-1. Clone the repository:
+Contributions are welcome! If you'd like to contribute to the development of this app, feel free to submit pull requests or report issues.
+
+## Future Improvements
+
+- Enhance user authentication using Passport.
+- Implement user following functionality.
+- Enable searching for posts based on specific criteria.
+
