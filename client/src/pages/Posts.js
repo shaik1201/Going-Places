@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import img1 from '../assets/road.jpg'
-import img2 from '../assets/fruits.jpg'
-import img3 from '../assets/tree.jpg'
-import Navbar from '../Navbar';
 import PostBox from '../Postbox';
 
 function Posts() {
